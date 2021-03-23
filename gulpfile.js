@@ -33,3 +33,12 @@ function funcB(cb){
 
 exports.doA = series(funcA, funcB);//任務串聯
 exports.doB = parallel(funcA, funcB);//任務並行
+
+
+//=================3. 打包 src / dest
+
+function moveFile(){
+    return src('./js/main.js').pipe(dest('output'));
+}
+
+exports.cp = moveFile;//輸出任務
